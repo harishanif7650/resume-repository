@@ -1,26 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Sample Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammad Haris — Projects Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Portfolio of projects by Muhammad Haris: robotics, AI, web, and utilities." />
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <p>This is a simple sample page.</p>
+  <header class="site-header">
+    <nav class="nav">
+      <div class="brand">Haris<span>Dev</span></div>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="btn primary">Contact</a></li>
+        <li><button id="themeToggle" class="btn subtle" aria-label="Toggle theme">🌓</button></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1 class="reveal">Hi, I’m <span>Muhammad Haris</span></h1>
+      <p class="lead reveal delay-1">From robotics to full-stack web apps, I build useful, real-world things.</p>
+      <div class="cta reveal delay-2">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#contact" class="btn">Hire Me</a>
+      </div>
+    </section>
   </header>
 
   <main>
-    <button id="clickBtn">Click Me</button>
-    <p id="message"></p>
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <p class="muted">Filter and search to explore my work.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="Robotics">Robotics</button>
+          <button class="chip" data-filter="Software">Software</button>
+          <button class="chip" data-filter="Utilities">Utilities</button>
+        </div>
+        <input id="searchInput" type="search" placeholder="Search by title, tech, or keywords…" aria-label="Search projects" />
+      </div>
+
+      <div id="projectGrid" class="grid"></div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="section-header">
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <p>
+          I’m a developer who enjoys solving practical problems and shipping polished user experiences.
+          Comfortable across Python, Java, HTML/CSS/JS, OpenCV, Qiskit, and IoT tools.
+          I like fast iterations, clean code, and products that delight.
+        </p>
+        <ul class="tags">
+          <li>Python</li><li>Java</li><li>HTML</li><li>CSS</li><li>OpenCV</li><li>IoT</li><li>PostgreSQL</li><li>TensorFlow</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-header">
+        <h2>Contact</h2>
+      </div>
+      <form id="contactForm" class="card">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button class="btn primary" type="submit">Send</button>
+        <p id="formStatus" class="muted" role="status" aria-live="polite"></p>
+      </form>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 My Website</p>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Muhammad Haris • Built with vanilla HTML/CSS/JS</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
